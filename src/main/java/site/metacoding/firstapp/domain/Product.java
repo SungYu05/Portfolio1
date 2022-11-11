@@ -29,6 +29,6 @@ public class Product {
         this.productName = product.getProductName();
         this.productPrice = product.getProductPrice();
         this.productQty = product.getProductQty();
-    }
+    } // 영속화된 객체 변경
 
 }

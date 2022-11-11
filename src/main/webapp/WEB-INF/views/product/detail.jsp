@@ -4,7 +4,7 @@
 <%@ include file="../layout/header.jsp"%>
 
 <div class="container mt-3">
-	<h2>상품목록페이지</h2>
+	<h2>상품상세페이지</h2>
 	<br />
 	<table class="table table-bordered">
 		<thead>
@@ -24,7 +24,7 @@
 				</tr>
 		</tbody>
 	</table>
-			<button type="button" class="btn btn-warning">수정하기</button>
+			<button type="button" class="btn btn-warning" onclick="location.href='/product/'+${productId}+'/edit'">수정하기</button>
 		<button type="button" class="btn btn-danger">삭제하기</button>
 </div>
 
