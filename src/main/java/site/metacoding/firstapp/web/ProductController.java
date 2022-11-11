@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,11 +37,13 @@ public class ProductController {
         return "redirect:/";
     }
     
-//    @GetMapping("/product/{id}")
-//    public String save() {
-//        return "/product/detail";
-//    }
-//    
+    @GetMapping("/product/{productId}")
+    public String save(@PathVariable Integer productId, Model model) {
+    	Product product = productDao.findById(productId);
+    	model.addAttribute("product", product);
+        return "/product/detail";
+    }
+    
 //    @PostMapping("/product/{id}/delete")
 //    public String update() {
 //        return "redirection:/";

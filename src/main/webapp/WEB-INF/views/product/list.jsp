@@ -13,6 +13,7 @@
 				<th>상품가격</th>
 				<th>상품수량</th>
 				<th>등록일</th>
+				<th>상품상세보기</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -22,11 +23,12 @@
 					<td>${product.productPrice}</td>
 					<td>${product.productQty}</td>
 					<td>${product.createdAt}</td>
+					<td><button type="button" class="btn btn-light" onclick="location.href='/product/'+${product.productId}">상품상세보기</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-		<button type="button" class="btn btn-success">상품추가</a></button>
+		<button type="button" class="btn btn-success" onclick="location.href='/product/add'">상품추가</button>
 </div>
 
 <%@ include file="../layout/footer.jsp"%>
