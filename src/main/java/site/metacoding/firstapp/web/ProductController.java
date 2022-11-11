@@ -38,20 +38,21 @@ public class ProductController {
 	}
 
 	@GetMapping("/product/{productId}") // 상품상세보기
-	public String save(@PathVariable Integer productId, Model model) {
+	public String detail(@PathVariable Integer productId, Model model) {
 		Product product = productDao.findById(productId);
 		model.addAttribute("product", product);
 		return "/product/detail";
 	}
 
-//    @PostMapping("/product/{id}/delete")
-//    public String update() {
-//        return "redirection:/";
-//    }
-//    
+    @PostMapping("/product/{productId}/delete")
+    public String delete(@PathVariable Integer productId) {
+    	productDao.deleteById(productId);
+    	return "redirect:/";
+    }
+    
 
 	@GetMapping("/product/{productId}/edit") // 상품수정
-	public String editFomr(@PathVariable Integer productId, Model model) {
+	public String editForm(@PathVariable Integer productId, Model model) {
 		model.addAttribute("edit", model);
 		return "/product/edit";
 	}

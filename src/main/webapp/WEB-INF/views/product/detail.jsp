@@ -16,16 +16,19 @@
 			</tr>
 		</thead>
 		<tbody>
-				<tr>
-					<td>${product.productName}</td>
-					<td>${product.productPrice}</td>
-					<td>${product.productQty}</td>
-					<td>${product.createdAt}</td>
-				</tr>
+			<tr>
+				<td>${product.productName}</td>
+				<td>${product.productPrice}</td>
+				<td>${product.productQty}</td>
+				<td>${product.createdAt}</td>
+				<td><button type="button" class="btn btn-warning"
+		onclick="location.href='/product/'+${productId}+'/edit'">수정하기</button></td>
+			</tr>
 		</tbody>
 	</table>
-			<button type="button" class="btn btn-warning" onclick="location.href='/product/'+${productId}+'/edit'">수정하기</button>
-		<button type="button" class="btn btn-danger">삭제하기</button>
+	<form action="/product/${productId}/delete" method="post">
+		<button type="submit" class="btn btn-danger">삭제하기</button>
+	</form>
 </div>
 
 <%@ include file="../layout/footer.jsp"%>
