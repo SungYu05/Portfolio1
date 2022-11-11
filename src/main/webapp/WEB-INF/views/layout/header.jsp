@@ -20,7 +20,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#">상품등록</a></li>
+					<li class="nav-item"><a class="nav-link" href="/product/add">상품등록</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">상품목록</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">상품상세보기</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">상품수정</a></li>

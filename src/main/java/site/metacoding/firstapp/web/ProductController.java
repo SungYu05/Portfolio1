@@ -25,12 +25,17 @@ public class ProductController {
     	return "/product/list";
     }
     
-    @PostMapping("/product/add")
-    public String add(Product product) {
-    	productDao.insert(product);
+    @GetMapping("/product/add") // 상품등록
+    public String addForm(Product product) {
         return "/product/add";
     }
-//    
+    
+    @PostMapping("/product/add") // 상품등록
+    public String add(Product product) {
+    	productDao.insert(product);
+        return "redirect:/";
+    }
+    
 //    @GetMapping("/product/{id}")
 //    public String save() {
 //        return "/product/detail";

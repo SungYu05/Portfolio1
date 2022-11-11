@@ -26,7 +26,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
-		<button type="button" class="btn btn-success">상품추가</button>
+		<button type="button" class="btn btn-success">상품추가</a></button>
 </div>
 
 <%@ include file="../layout/footer.jsp"%>
