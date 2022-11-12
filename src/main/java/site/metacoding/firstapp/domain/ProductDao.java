@@ -12,4 +12,6 @@ public interface ProductDao {
     public int update(Product product); // 상품업데이트
 
     public int deleteById(Integer productId); // 상품삭제
+    
+    public Product findByProductName(String productName); // 상품명중복체크
 }
