@@ -37,9 +37,9 @@
 						<c:when test="${empty principal}">
 							<li class="nav-item"><a class="nav-link" href="/login">로그인</a></li>
 							<li class="nav-item"><a class="nav-link" href="/product/add">관리자로그인</a></li>
+							<li class="nav-item"><a class="nav-link" href="/product/add">상품등록</a></li>
 						</c:when>
 						<c:otherwise>
-							<li class="nav-item"><a class="nav-link" href="/product/add">상품등록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/">상품목록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
 						</c:otherwise>

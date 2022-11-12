@@ -42,5 +42,16 @@ public class UsersController {
 		session.invalidate();
 		return "redirect:/login";
 	}
+	
+	@GetMapping("/join")
+	public String joinForm(Users users) {
+		return "/users/join";
+	}
+	
+	@PostMapping("/join")
+	public String join(Users users) {
+		usersDao.insert(users);
+		return "redirect:/";
+	}
 
 }

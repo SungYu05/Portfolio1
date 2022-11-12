@@ -13,6 +13,7 @@
 				<th>상품가격</th>
 				<th>상품수량</th>
 				<th>등록일</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,11 +22,15 @@
 				<td>${product.productPrice}</td>
 				<td>${product.productQty}</td>
 				<td>${product.createdAt}</td>
+				<td>
+					<button type="button" class="btn btn-success">구매하기</button>
+				</td>
 				<td><button type="button" class="btn btn-warning"
-		onclick="location.href='/product/'+${productId}+'/edit'">수정하기</button></td>
+						onclick="location.href='/product/'+${productId}+'/edit'">수정하기</button></td>
 			</tr>
 		</tbody>
 	</table>
+
 	<form action="/product/${productId}/delete" method="post">
 		<button type="submit" class="btn btn-danger">삭제하기</button>
 	</form>

@@ -14,7 +14,7 @@
 		</div>
 
 		<button type="submit" class="btn btn-success">로그인하기</button>
-		<button type="submit" class="btn btn-primary">회원가입</button>
+		<button type="button" class="btn btn-primary" onclick="location.href='join'">회원가입</button>
 	</form>
 </div>
 <%@ include file="../layout/footer.jsp"%>
