@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import lombok.Getter;
 
 @Getter
-public class Orders {
+public class Orders { // 주문테이블
 	private Integer orderId;
 	private Integer usersId;
 	private Integer productsId;
