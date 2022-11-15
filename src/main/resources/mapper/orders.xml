@@ -5,22 +5,19 @@
 <mapper namespace="site.metacoding.firstapp.domain.OrdersDao">
 	<select id="findById"
 		resultType="site.metacoding.firstapp.domain.Orders">
-		SELECT * FROM orders WHERE order_id=#{orderId}
+		SELECT * FROM orders WHERE orders_id=#{ordersId}
 	</select>
 
 	<select id="findAll"
 		resultType="site.metacoding.firstapp.domain.Orders">
-		SELECT *
-		FROM orders
-		WHERE user_id=#{userId}
+		SELECT * FROM orders WHERE user_id = #{userId}
 	</select>
 
 	<insert id="insert">
-		INSERT INTO orders(order_name, order_price,
-		order_qty, product_id,
+		INSERT INTO orders(order_name, order_price, order_qty, product_id,
 		user_id, created_at)
 		VALUES(#{orderName},#{orderPrice}, #{orderQty}, #{productId},
-		#{userId}, NOW());
+		#{userId}, NOW())
 	</insert>
 
 

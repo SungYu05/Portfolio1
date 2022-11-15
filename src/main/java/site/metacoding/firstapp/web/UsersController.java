@@ -32,7 +32,7 @@ public class UsersController {
 	public String login(LoginDto loginDto) {
 		Users principal = usersService.로그인(loginDto);
 		if (principal == null) {
-			return null;
+			return "redirect:/login";
 		}
 		session.setAttribute("principal", principal);
 		return "redirect:/";

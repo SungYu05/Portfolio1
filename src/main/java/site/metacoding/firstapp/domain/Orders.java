@@ -3,7 +3,9 @@ package site.metacoding.firstapp.domain;
 import java.sql.Timestamp;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Getter
 public class Orders { // 주문테이블
 	private Integer ordersId;
@@ -20,10 +22,6 @@ public class Orders { // 주문테이블
 		this.orderQty = orderQty;
 		this.productId = productId;
 		this.userId = userId;
-
 	}
 	
-
-	
-
 }

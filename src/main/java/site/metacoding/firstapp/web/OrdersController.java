@@ -26,13 +26,19 @@ public class OrdersController {
 	public String orderList(Model model) {
 		Users principal = (Users) session.getAttribute("principal");
 		model.addAttribute("orderList", ordersDao.findAll(principal.getUserId()));
-		return "user/orderList";
+		return "orders/orderList";
 	}
 	
 	@PostMapping("/orders/{productId}")
 	public String orderProduct(@PathVariable Integer productId, OrderProductDto orderProductDto) {
 		Users principal = (Users) session.getAttribute("principal");
+		if(principal == null) {
+			return "redirect:/login";
+		}
 		Product productPS = productDao.findById(productId);
+		if (productPS.getProductQty() - orderProductDto.getOrderQty() <= 0) {
+			return "redirect:/";
+		}
 		productDao.productQtyUpdate(orderProductDto);
 		ordersDao.insert(orderProductDto.toEntity(principal.getUserId()));
 		return  "redirect:/";
