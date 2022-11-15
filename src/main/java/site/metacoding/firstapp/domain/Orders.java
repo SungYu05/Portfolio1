@@ -20,6 +20,7 @@ public class Orders { // 주문테이블
 		this.orderQty = orderQty;
 		this.productId = productId;
 		this.userId = userId;
+
 	}
 	
 

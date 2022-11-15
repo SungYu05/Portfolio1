@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.Users;
 import site.metacoding.firstapp.domain.UsersDao;
 import site.metacoding.firstapp.service.UsersService;
+import site.metacoding.firstapp.web.dto.request.LoginDto;
 import site.metacoding.firstapp.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -24,12 +25,12 @@ public class UsersController {
 
 	@GetMapping("/login")
 	public String login () {
-		return "/users/login";
+		return "users/login";
 	}
 	
 	@PostMapping("/login")
-	public String login(Users users) {
-		Users principal = usersService.로그인(users);
+	public String login(LoginDto loginDto) {
+		Users principal = usersService.로그인(loginDto);
 		if (principal == null) {
 			return null;
 		}
@@ -45,7 +46,7 @@ public class UsersController {
 	
 	@GetMapping("/join")
 	public String joinForm(Users users) {
-		return "/users/join";
+		return "users/join";
 	}
 	
 	@PostMapping("/join")
