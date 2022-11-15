@@ -5,16 +5,24 @@ import java.sql.Timestamp;
 import lombok.Getter;
 
 @Getter
-public class Orders {
-	private Integer orderId;
-	private Integer usersId;
-	private Integer productsId;
-    private Timestamp createdAt;
-    
-	public Orders(Integer usersId, Integer productsId) {
-		this.usersId = usersId;
-		this.productsId = productsId;
+public class Orders { // 주문테이블
+	private Integer ordersId;
+	private String orderName;
+	private Integer orderPrice;
+	private Integer orderQty; // 주문수량
+	private Integer productId;
+	private Integer userId;
+	private Timestamp createdAt;
+	
+	public Orders(String orderName, Integer orderPrice, Integer orderQty, Integer productId, Integer userId) {
+		this.orderName = orderName;
+		this.orderPrice = orderPrice; 
+		this.orderQty = orderQty;
+		this.productId = productId;
+		this.userId = userId;
 	}
-    
-    
+	
+
+	
+
 }

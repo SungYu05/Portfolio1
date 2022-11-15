@@ -16,22 +16,33 @@
 
 	<insert id="insert" useGeneratedKeys="true"
 		keyProperty="productId">
-		INSERT INTO product(product_name, product_price, product_qty, created_at)
-		VALUES(#{productName}, #{productPrice}, #{productQty}, NOW())
+		INSERT INTO product(product_name, product_price,
+		product_qty, created_at)
+		VALUES(#{productName}, #{productPrice},
+		#{productQty}, NOW())
 	</insert>
 
 	<update id="update">
 		UPDATE product SET product_name = #{productName},
 		product_price = #{productPrice},
 		product_qty = #{productQty}
-		WHERE product_id = #{productId}
+		WHERE
+		product_id = #{productId}
 	</update>
 
 	<delete id="deleteById">
 		DELETE FROM product WHERE product_id = #{productId}
 	</delete>
-	
-	<select id="findByProductName" resultType="site.metacoding.firstapp.domain.Product">
+
+	<select id="findByProductName"
+		resultType="site.metacoding.firstapp.domain.Product">
 		SELECT * FROM product WHERE product_name = #{productName}
 	</select>
+
+	<update id="productQtyUpdate">
+		Update product
+		SET product_qty =
+		product_qty - #{orderQty}
+		WHERE product_id = #{productId}
+	</update>
 </mapper>

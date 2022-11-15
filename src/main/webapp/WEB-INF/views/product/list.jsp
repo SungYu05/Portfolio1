@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
 
@@ -23,12 +22,12 @@
 					<td>${product.productPrice}</td>
 					<td>${product.productQty}</td>
 					<td>${product.createdAt}</td>
-					<td><button type="submit" class="btn btn-light" onclick="location.href='/product/'+${product.productId}">상품상세보기</button></td>
+					<td><button type="submit" class="btn btn-light"
+							onclick="location.href='/product/'+${product.productId}">상품상세보기</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-		<button type="button" class="btn btn-success" onclick="location.href='/product/add'">상품추가</button>
 </div>
 
 <%@ include file="../layout/footer.jsp"%>

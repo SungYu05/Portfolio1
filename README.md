@@ -31,7 +31,15 @@ CREATE TABLE users(
 	user_name VARCHAR(20) NOT NULL,
 	user_password VARCHAR(20) NOT NULL,
 	user_email VARCHAR(20) NOT NULL,
-    created_at TIMESTAMP NOT null
+   created_at TIMESTAMP NOT null
+);
+
+CREATE TABLE orders(
+	order_id INT PRIMARY KEY AUTO_INCREMENT,
+	order_qty INT NOT NULL, /*구매수량*/
+	product_id INT NOT NULL,
+ 	user_id INT NOT NULL,
+	created_at TIMESTAMP NOT null
 );
 ```
 
