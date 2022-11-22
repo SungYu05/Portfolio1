@@ -5,7 +5,6 @@
 	<h2>구매목록페이지</h2>
 	<br />
 	<table class="table table-bordered">
-
 		<thead>
 			<tr>
 				<th>상품이름</th>

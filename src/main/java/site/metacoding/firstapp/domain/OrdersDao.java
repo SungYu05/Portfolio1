@@ -9,8 +9,4 @@ public interface OrdersDao {
 	public List<Orders> findAll(Integer userId); // 주문 후 수량 // userId 받는 거로 변경
 	public Orders findById(Integer orderId);
 	public void deleteById(Integer orderId);
-	
-	// 추가
-	public void orderUpdatebyProductQty(Orders orders);
-
 }

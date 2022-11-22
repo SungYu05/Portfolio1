@@ -8,4 +8,5 @@ import lombok.Setter;
 public class LoginDto {
 	private String userName;
 	private String userPassword;
+	private String role; // 2. dto에 role 추가
 }
