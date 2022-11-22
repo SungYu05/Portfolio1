@@ -24,10 +24,16 @@ public class UsersController {
 	private final HttpSession session;
 
 	@GetMapping("/login")
-	public String login () {
+	public String login() {
 		return "users/login";
 	}
-	
+
+	@GetMapping("/admin/login")
+	public String adminLogin() {
+		return "users/adminLogin";
+	}
+
+	// 유저 로그인
 	@PostMapping("/login")
 	public String login(LoginDto loginDto) {
 		Users principal = usersService.로그인(loginDto);
@@ -37,18 +43,29 @@ public class UsersController {
 		session.setAttribute("principal", principal);
 		return "redirect:/";
 	}
-	
+
+	// 5. admin 로그인
+	@PostMapping("/admin/login")
+	public String adminLogin(LoginDto loginDto) {
+		Users principal = usersService.admin로그인(loginDto);
+		if (principal == null) {
+			return "redirect:/admin/login";
+		}
+		session.setAttribute("principal", principal);
+		return "redirect:/";
+	}
+
 	@GetMapping("/logout")
 	public String logout() {
 		session.invalidate();
 		return "redirect:/login";
 	}
-	
+
 	@GetMapping("/join")
 	public String joinForm(Users users) {
 		return "users/join";
 	}
-	
+
 	@PostMapping("/join")
 	public String join(Users users) {
 		usersDao.insert(users);

@@ -11,6 +11,5 @@ public interface UsersDao {
 	public int update(Users users); 
 	public int deleteById(Integer userId);
 	public Users findByUserName(String userName); // 로그인을 위한 DAO
-	public Users login(LoginDto loginDto); // 로그인
-
+	public Users adminLogin(LoginDto loginDto); // 1. admin로그인
 }

@@ -22,14 +22,14 @@ public class OrdersController {
 	private final OrdersDao ordersDao;
 	private final HttpSession session;
 	
-	@GetMapping("/orders/list")
+	@GetMapping("/orders/list") // 구매목록
 	public String orderList(Model model) {
 		Users principal = (Users) session.getAttribute("principal");
 		model.addAttribute("orderList", ordersDao.findAll(principal.getUserId()));
 		return "orders/orderList";
 	}
 	
-	@PostMapping("/orders/{productId}")
+	@PostMapping("/orders/{productId}") // 상품 구매하기
 	public String orderProduct(@PathVariable Integer productId, OrderProductDto orderProductDto) {
 		Users principal = (Users) session.getAttribute("principal");
 		if(principal == null) {
