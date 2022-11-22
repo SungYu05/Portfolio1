@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
 <!-- 1. 관리자 전용 상세페이지 만들기 -->
 <div class="container mt-3">
@@ -22,13 +23,14 @@
 				<td>${product.createdAt}</td>
 				<td><button type="button" class="btn btn-warning"
 						onclick="location.href='/product/'+${product.productId}+'/edit'">수정하기</button></td>
+				<td>
+					<form action="/product/${product.productId}/delete" method="post">
+						<button type="submit" class="btn btn-danger">삭제하기</button>
+					</form>
+				</td>
 			</tr>
 		</tbody>
 	</table>
-
-	<form action="/product/${product.productId}/delete" method="post">
-		<button type="submit" class="btn btn-danger">삭제하기</button>
-	</form>
 </div>
 
 <%@ include file="../layout/footer.jsp"%>
