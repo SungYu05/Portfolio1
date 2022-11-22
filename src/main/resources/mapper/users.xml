@@ -15,6 +15,12 @@
 		SELECT * FROM users WHERE user_name = #{userName}
 	</select>
 
+	<!-- 유저 목록을 위한 mapper -->
+	<select id="findAll"
+		resultType="site.metacoding.firstapp.domain.Users">
+		SELECT * FROM users
+	</select>
+
 	<!-- 4. adminLogin mapper 작성 -->
 	<select id="adminLogin"
 		resultType="site.metacoding.firstapp.web.dto.request.LoginDto">
