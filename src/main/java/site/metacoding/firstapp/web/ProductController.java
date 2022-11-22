@@ -55,6 +55,14 @@ public class ProductController {
 		return "/product/detail";
 	}
 
+	// 3. admin 전용 상세페이지 컨트롤러 작성
+	@GetMapping("/admin/product/{productId}") // 상품상세보기
+	public String adminDetail(@PathVariable Integer productId, Model model) {
+		Product product = productDao.findById(productId);
+		model.addAttribute("product", product);
+		return "/product/adminDetail";
+	}
+
 	@PostMapping("/product/{productId}/delete")
 	public String delete(@PathVariable Integer productId) {
 		productDao.deleteById(productId);
