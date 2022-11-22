@@ -15,10 +15,11 @@ public class Users {
 	private String role;
 	private Timestamp createdAt;
 	
-	public Users(Integer userId, String userName, String userPassword, String userEmail, Timestamp createdAt) {
+	public Users(Integer userId, String userName, String userPassword, String userEmail, String role, Timestamp createdAt) {
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.userEmail = userEmail;
+		this.role = role;
 		this.createdAt = createdAt;
 	}
 }

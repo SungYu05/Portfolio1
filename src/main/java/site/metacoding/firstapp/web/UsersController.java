@@ -1,8 +1,11 @@
 package site.metacoding.firstapp.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -70,6 +73,14 @@ public class UsersController {
 	public String join(Users users) {
 		usersDao.insert(users);
 		return "redirect:/";
+	}
+	
+	// 2-2. 유저 목록을 보기 위한 컨트롤러
+	@GetMapping("/users")
+	public String list(Model model) {
+		List<Users> userList = usersDao.findAll();
+		model.addAttribute("userList", userList);
+		return "/users/list";
 	}
 
 }
