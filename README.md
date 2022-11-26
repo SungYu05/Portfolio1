@@ -42,6 +42,7 @@ CREATE TABLE users(
 	user_name VARCHAR(20) NOT NULL,
 	user_password VARCHAR(20) NOT NULL,
 	user_email VARCHAR(20) NOT NULL,
+	role VARCHAR(20) NOT NULL DEFAULT('user'),
    created_at TIMESTAMP NOT null
 );
 

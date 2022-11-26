@@ -8,15 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.Users;
 import site.metacoding.firstapp.domain.UsersDao;
 import site.metacoding.firstapp.service.UsersService;
 import site.metacoding.firstapp.web.dto.request.LoginDto;
-import site.metacoding.firstapp.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -74,7 +71,7 @@ public class UsersController {
 		usersDao.insert(users);
 		return "redirect:/";
 	}
-	
+
 	// 2-2. 유저 목록을 보기 위한 컨트롤러
 	@GetMapping("/users")
 	public String list(Model model) {

@@ -1,7 +1,6 @@
 package site.metacoding.firstapp.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.firstapp.domain.Product;

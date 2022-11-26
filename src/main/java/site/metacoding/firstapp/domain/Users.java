@@ -4,8 +4,10 @@ import java.sql.Timestamp;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
+@Setter
 @Getter
 public class Users {
 	private Integer userId;
@@ -14,8 +16,9 @@ public class Users {
 	private String userEmail;
 	private String role;
 	private Timestamp createdAt;
-	
-	public Users(Integer userId, String userName, String userPassword, String userEmail, String role, Timestamp createdAt) {
+
+	public Users(Integer userId, String userName, String userPassword, String userEmail, String role,
+			Timestamp createdAt) {
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.userEmail = userEmail;
