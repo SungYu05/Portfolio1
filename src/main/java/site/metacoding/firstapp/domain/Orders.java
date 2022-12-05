@@ -15,13 +15,15 @@ public class Orders { // 주문테이블
 	private Integer productId;
 	private Integer userId;
 	private Timestamp createdAt;
-	
-	public Orders(String orderName, Integer orderPrice, Integer orderQty, Integer productId, Integer userId) {
+
+	public Orders(Integer ordersId, String orderName, Integer orderPrice, Integer orderQty, Integer productId,
+			Integer userId) {
+		this.ordersId = ordersId;
 		this.orderName = orderName;
-		this.orderPrice = orderPrice; 
+		this.orderPrice = orderPrice;
 		this.orderQty = orderQty;
 		this.productId = productId;
 		this.userId = userId;
 	}
-	
+
 }
