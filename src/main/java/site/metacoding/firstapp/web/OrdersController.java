@@ -26,8 +26,21 @@ public class OrdersController {
 	@GetMapping("/orders/list") // 구매목록
 	public String orderList(Model model) {
 		Users principal = (Users) session.getAttribute("principal");
+		if (principal == null) {
+			return "redirect:/login";
+		}
 		model.addAttribute("orderList", ordersDao.findAll(principal.getUserId()));
 		return "orders/orderList";
+	}
+
+	@GetMapping("/users/orders/{userId}/list") // 유저구매목록
+	public String userOrderList(@PathVariable Integer userId, Model model) {
+		Users principal = (Users) session.getAttribute("principal");
+		if (principal == null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("userOrderList", ordersDao.userFindAll(userId));
+		return "orders/userOrderList";
 	}
 
 	@PostMapping("/orders/{ordersId}/delete") // 구매취소

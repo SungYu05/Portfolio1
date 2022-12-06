@@ -38,6 +38,7 @@
 	</select>
 
 	<update id="productQtyUpdate">
+		<!--구매하기-->
 		Update product SET product_qty = product_qty - #{orderQty}
 		WHERE product_id = #{productId}
 	</update>

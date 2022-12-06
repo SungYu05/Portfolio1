@@ -11,6 +11,15 @@
 		SELECT * FROM orders WHERE user_id = #{userId}
 	</select>
 
+	<select id="userFindAll"
+		resultType="site.metacoding.firstapp.domain.Orders">
+		SELECT u.user_name, u.role, o.order_name, o.order_price, o.order_qty, o.created_at 
+		FROM users u
+		LEFT OUTER JOIN orders o
+		ON o.user_id = u.user_id
+		WHERE u.user_id = #{userId}
+	</select>
+
 	<insert id="insert">
 		INSERT INTO orders(order_name, order_price,
 		order_qty, product_id,
