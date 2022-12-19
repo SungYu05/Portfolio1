@@ -1,4 +1,5 @@
 let isProductNameSameCheck = false;
+let isProductNameState = "";
 
 $("#btnAdd").click(() => {
 	save();
@@ -14,24 +15,29 @@ function save() {
 		return;
 	}
 
+	if (!(isProductNameState == $("#productName").val())) {
+		alert("상품명 중복확인 후 다시 시도해 주세요.");
+		return;
+	}
+
+
 	let data = {
 		productName: $("#productName").val(),
 		productPrice: $("#productPrice").val(),
 		productQty: $("#productQty").val()
 	};
 
-	$.ajax("/product/add" , {
+	$.ajax("/product/add", {
 		type: "POST",
-		dataType: "json", 
-		data: JSON.stringify(data), 
-		headers: { 
+		dataType: "json",
+		data: JSON.stringify(data),
+		headers: {
 			"Content-Type": "application/json"
 		}
 	}).done((res) => {
 		if (res.code == 1) {
 			location.href = "/";
 		} else {
-			alert("중복체크를 다시 확인해주세요");
 			history.back();
 		}
 	});
@@ -49,9 +55,13 @@ function checkProductName() {
 			if (res.data == false) {
 				alert("상품명이 중복되지 않았습니다.");
 				isProductNameSameCheck = true;
+				isProductNameState = productName;
+
 			} else {
 				alert("상품명이 중복되었습니다. 다른 상품명을 사용해주세요.");
 				isProductNameSameCheck = false;
+				$("#productName").val("");
+
 			}
 		}
 	});
