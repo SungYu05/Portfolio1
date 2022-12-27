@@ -7,7 +7,7 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>닉네임</th>
+						<th>아이디</th>
 						<th>상품이름</th>
 						<th>상품가격</th>
 						<th>구매수량</th>

@@ -33,6 +33,10 @@
 								<c:when test="${principal.role == 'user'}">
 									<li class="nav-item"><a class="nav-link" href="/">상품목록</a></li>
 									<li class="nav-item"><a class="nav-link" href="/orders/list">구매목록</a></li>
+									<!--회원정보수정1. 주소 추가-->
+									<li class="nav-item"><a class="nav-link"
+											href="/users/${principal.userId}/edit">회원정보수정</a>
+									</li>
 									<li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
 								</c:when>
 								<c:otherwise>

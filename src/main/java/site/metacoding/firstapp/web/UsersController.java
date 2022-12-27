@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
@@ -78,6 +79,24 @@ public class UsersController {
 		List<Users> userList = usersDao.findAll();
 		model.addAttribute("userList", userList);
 		return "/users/list";
+	}
+
+	// 회원정보수정5. 컨트롤러 변경
+	@GetMapping("/users/{userId}/edit")
+	public String editForm(@PathVariable Integer userId, Model model) {
+		model.addAttribute("userEdit", model);
+		return "users/edit";
+	}
+
+	@PostMapping("/users/{userId}/edit")
+	public String edit(@PathVariable Integer userId, Users users) {
+		// 영속화
+		Users userPs = usersDao.findById(userId);
+		// 영속화된 객체 변경
+		userPs.update(userPs);
+		// 디비 변경
+		usersDao.update(users);
+		return "redirect:/";
 	}
 
 }

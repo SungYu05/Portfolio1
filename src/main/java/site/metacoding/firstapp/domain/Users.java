@@ -25,4 +25,15 @@ public class Users {
 		this.role = role;
 		this.createdAt = createdAt;
 	}
+
+	// 회원정보수정3. 영속화된 객체 변경
+	public void update(Users users) {
+		this.userName = users.getUserName();
+		this.userPassword = users.getUserPassword();
+		this.userEmail = users.getUserEmail();
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 }
