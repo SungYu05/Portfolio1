@@ -43,6 +43,17 @@ public class OrdersController {
 		return "orders/userOrderList";
 	}
 
+	// 유저전체주문목록4. 컨트롤러 만들기
+	@GetMapping("/users/orders/list")
+	public String userOrderFindAll(Model model) {
+		Users principal = (Users) session.getAttribute("principal");
+		if (principal == null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("userOrderFindAll", ordersDao.userOrderFindAll());
+		return "orders/userOrderFindAll";
+	}
+
 	@PostMapping("/orders/{ordersId}/delete") // 구매취소
 	public String orderDelete(@PathVariable Integer ordersId, OrderProductDto orderProductDto) {
 		Users principal = (Users) session.getAttribute("principal");
